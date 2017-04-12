@@ -29,7 +29,7 @@ $(function() {
     updateCount();
   });
 
-  $list.on('click', function() {
+  $list.on('click', 'li', function() {
     var $this = $(this);
     var complete = $this.hasClass('complete');
 
@@ -44,6 +44,7 @@ $(function() {
       item = $this.text();
       $this.remove();
       $list
+        .append('<p id=\"ready\">' + "DONE" + '</p>')
         .append('<li class=\"complete\">' + item + '</li>')
         .hide().fadeIn(300);
       updateCount();
