@@ -7,7 +7,7 @@
   <body>
     <div id="page">
       <h1 id="header">List</h1>
-      <h2>What is there to do?<span id="counter"></span></h2>
+      <h2>What is there to do?  <span id="counter"></span></h2>
       <ul>
         <li id="one" class="hot"><em>master</em> jQuery</li>
         <li id="two" class="hot">start Java</li>
@@ -20,7 +20,16 @@
         <input type="submit" id="add" value="Add" />
       </form>
     </div>
-    <script src="js/jquery-1.11.0.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+    <script>
+        // Fallback to loading jQuery from a local path if the CDN is unavailable
+        (window.jQuery || document.write('<script src="/scripts/jquery-1.9.0.min.js"><\/script>'));
+    </script>
+    <script>
+      $(function() {
+        console.log('ready');
+      });
+    </script>
     <script src="js/main.js"></script>
   </body>
 </html>
